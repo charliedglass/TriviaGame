@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MLB Trivia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type = "text/javascript" src="assets/javascript/app.js"></script>
+</head>
+<body>
+    <!--The game is played within this bootstrap container-->
+    <div class = "container game-container mt-5 mb-5 align-middle">
+        <div class = "row mt-4">
+            <div class = "col-md-6 offset-md-3 header">
+                <h1>MLB Trivia</h1>
+            </div>
+        </div>
+        <div class = "row mt-3">
+            <div class = "col-md-4 offset-md-4">
+                <!--start form, shown until the start button is pressed-->
+                <form id = "start-form">
+                    <input class = "btn" id = "start" type = "submit" value = "Start">
+                </form>
+            </div>
+        </div>
+        <!--game form shown after start button pressed, and only until game is over-->
+        <form id = "game-form">
+            <div class = "row mt-1">
+                <div class = "col-md-6 offset-md-3">
+                    Time Remaining: <span id = "time-remaining"></span>
+                </div>
+            </div>
+            <div class = "row mt-4">
+                <div class = "col-md-12 q1" data-value = "Barry Bonds">
+                    Which player has the most homeruns in MLB History?
+                </div>
+            </div>
+            <div class = "row mt-1 options">
+                <div class = "col-md-2 offset-md-2">
+                    <input type = "radio" name = "q1" value = "Alex Rodriguez">Alex Rodriguez
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q1" value = "Hank Aaron">Hank Aaron
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q1" value = "Barry Bonds">Barry Bonds
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q1" value = "Babe Ruth">Babe Ruth
+                </div>
+            </div>
+            <div class = "row mt-4">
+                <div class = "col-md-12 q2" data-value = "Yankees">
+                    Which team has won the most World Series?
+                </div>
+            </div>
+            <div class = "row mt-1 options">
+                <div class = "col-md-2 offset-md-2">
+                    <input type = "radio" name = "q2" value = "Yankees">Yankees
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q2" value = "Red Sox">Red Sox
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q2" value = "Giants">Giants
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q2" value = "Phillies">Phillies
+                </div>
+            </div>
+            <div class = "row mt-4">
+                <div class = "col-md-12 q3" data-value = "Giants">
+                    Which team has won the most World Series in the 2010s decade?
+                </div>
+            </div>
+            <div class = "row mt-1 options">
+                <div class = "col-md-2 offset-md-2">
+                    <input type = "radio" name = "q3" value = "Yankees">Yankees
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q3" value = "Red Sox">Red Sox
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q3" value = "Giants">Giants
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q3" value = "Phillies">Phillies
+                </div>
+            </div>
+            <div class = "row mt-4">
+                <div class = "col-md-12 q4" data-value = "Fenway Park">
+                    What is currently the oldest MLB Stadium?
+                </div>
+            </div>
+            <div class = "row mt-1 options">
+                <div class = "col-md-2 offset-md-2">
+                    <input type = "radio" name = "q4" value = "Wrigley Field">Wrigley Field
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q4" value = "Fenway Park">Fenway Park
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q4" value = "Dodger Stadium">Dodger Stadium
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q4" value = "Yankee Stadium">Yankee Stadium
+                </div>
+            </div>
+            <div class = "row mt-4">
+                <div class = "col-md-12 q5" data-value = "90 ft.">
+                    On a regulation MLB field, what is the distance between home plate and first base?
+                </div>
+            </div>
+            <div class = "row mt-1 options">
+                <div class = "col-md-2 offset-md-2">
+                    <input type = "radio" name = "q5" value = "50 ft.">50 ft.
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q5" value = "80 ft.">80 ft.
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q5" value = "90 ft.">90 ft.
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q5" value = "100 ft.">100 ft.
+                </div>
+            </div>
+            <div class = "row mt-4">
+                <div class = "col-md-12 q6" data-value = "Lou Gehrig">
+                    Which former MLB player has a well-known neurodegnerative disease named after him?
+                </div>
+            </div>
+            <div class = "row mt-1 options">
+                <div class = "col-md-2 offset-md-2">
+                    <input type = "radio" name = "q6" value = "Lou Gehrig">Lou Gehrig
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q6" value = "Tommy John">Tommy John
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q6" value = "Ted Williams">Ted Williams
+                </div>
+                <div class = "col-md-2">
+                    <input type = "radio" name = "q6" value = "Honus Wagner">Honus Wagner
+                </div>
+            </div>
+            <div class = "row mt-4">
+                    <div class = "col-md-12 q7" data-value = "42">
+                        What is the only jersey number retired across the MLB?
+                    </div>
+                </div>
+                <div class = "row mt-1 options">
+                    <div class = "col-md-2 offset-md-2">
+                        <input type = "radio" name = "q7" value = "0">0
+                    </div>
+                    <div class = "col-md-2">
+                        <input type = "radio" name = "q7" value = "3">3
+                    </div>
+                    <div class = "col-md-2">
+                        <input type = "radio" name = "q7" value = "42">42
+                    </div>
+                    <div class = "col-md-2">
+                        <input type = "radio" name = "q7" value = "100">100
+                    </div>
+                </div>
+                <div class = "row mt-1">
+                    <div class = "col-md-4 offset-md-4">
+                        <input class = "btn" id = "done" type = "submit" value = "Done">
+                    </div>
+                </div>
+        </form>
+        <!--Game summary, shown after the game is over-->
+        <div class = "row mt-2 game-summary">
+            <div class = "col-md-4 offset-md-4">
+                All Done!
+            </div>
+        </div>
+        <div class = "row mt-1 game-summary">
+            <div class = "col-md-4 offset-md-4">
+                Correct Answers: <span id = "correct"></span>
+            </div>
+        </div> 
+        <div class = "row mt-1 game-summary">
+            <div class = "col-md-4 offset-md-4">
+                Incorrect Answers: <span id = "incorrect"></span>
+            </div>
+        </div>
+        <div class = "row mt-1 mb-2 game-summary">
+            <div class = "col-md-4 offset-md-4">
+                Unanswered: <span id = "unanswered"></span>
+            </div>
+        </div>  
+    </div>
+    
+</body>
+</html>
